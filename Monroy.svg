@@ -2,9 +2,17 @@
      viewBox="0 0 900 200"
      xmlns="http://www.w3.org/2000/svg">
 
+  <defs>
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 
-
-  <!-- TEXTO QUE SE DIBUJA -->
+  <!-- TEXTO -->
   <text x="50%" y="60%"
         text-anchor="middle"
         font-family="'Great Vibes', 'Brush Script MT', cursive"
@@ -14,35 +22,43 @@
         stroke-width="2.5"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="1200"
-        stroke-dashoffset="1200"
+        pathLength="1"
+        stroke-dasharray="1"
+        stroke-dashoffset="1"
         filter="url(#neonGlow)">
 
-      Monroy
+    Monroy
 
-    <!-- Animación de escritura -->
+    <!-- Escritura -->
     <animate attributeName="stroke-dashoffset"
-             from="1200" to="0"
+             from="1" to="0"
              dur="2.5s"
              begin="0s"
              fill="freeze"/>
 
-    <!-- Encendido neón -->
-    
+    <!-- Encendido relleno -->
+    <animate attributeName="fill"
+             from="none"
+             to="#7df9ff"
+             begin="2.3s"
+             dur="0.2s"
+             fill="freeze"/>
+
   </text>
 
   <!-- PARPADEO NEÓN -->
   <style>
     text {
-      animation: neon-flicker 5s 3s infinite alternate;
+      animation: flicker 5s 3s infinite alternate;
     }
 
-    @keyframes neon-flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% {
         opacity: 1;
         filter:
-          drop-shadow(0 0 0.4em #fff)
-          
+          drop-shadow(0 0 0.3em #fff)
+          drop-shadow(0 0 1em #7df9ff)
+          drop-shadow(0 0 2em #7df9ff);
       }
       20%, 24%, 55% {
         opacity: 0.25;
@@ -52,4 +68,3 @@
   </style>
 
 </svg>
-
