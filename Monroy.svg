@@ -1,0 +1,64 @@
+<svg width="900" height="200"
+     viewBox="0 0 900 200"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Glow neón -->
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- TEXTO QUE SE DIBUJA -->
+  <text x="50%" y="60%"
+        text-anchor="middle"
+        font-family="'Great Vibes', 'Brush Script MT', cursive"
+        font-size="120"
+        fill="none"
+        stroke="#7df9ff"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-dasharray="1200"
+        stroke-dashoffset="1200"
+        filter="url(#neonGlow)">
+
+    Erick Monroy
+
+    <!-- Animación de escritura -->
+    <animate attributeName="stroke-dashoffset"
+             from="1200" to="0"
+             dur="2.5s"
+             begin="0s"
+             fill="freeze"/>
+
+    <!-- Encendido neón -->
+    
+  </text>
+
+  <!-- PARPADEO NEÓN -->
+  <style>
+    text {
+      animation: neon-flicker 5s 3s infinite alternate;
+    }
+
+    @keyframes neon-flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        filter:
+          drop-shadow(0 0 0.4em #fff)
+          
+      }
+      20%, 24%, 55% {
+        opacity: 0.25;
+        filter: none;
+      }
+    }
+  </style>
+
+</svg>
