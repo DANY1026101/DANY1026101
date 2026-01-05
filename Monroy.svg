@@ -28,27 +28,10 @@
              fill="freeze"/>
 
     <!-- Encendido neón -->
-    
-  </text>
+
 
   <!-- PARPADEO NEÓN -->
-  <style>
-    text {
-      animation: neon-flicker 5s 3s infinite alternate;
-    }
 
-    @keyframes neon-flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-        filter:
-          drop-shadow(0 0 0.4em #fff)
-          
-      }
-      20%, 24%, 55% {
-        opacity: 0.25;
-        filter: none;
-      }
-    }
-  </style>
 
 </svg>
+
