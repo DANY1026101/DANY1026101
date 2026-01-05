@@ -2,17 +2,7 @@
      viewBox="0 0 900 200"
      xmlns="http://www.w3.org/2000/svg">
 
-  <defs>
-    <!-- Glow neón -->
-    <filter id="neonGlow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
+
 
   <!-- TEXTO QUE SE DIBUJA -->
   <text x="50%" y="60%"
